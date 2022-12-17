@@ -1,6 +1,6 @@
 /**
  */
-package org.qadzifi.eclipse.dialog.modeling.model.provider;
+package org.qadzifi.eclipse.dialog.modeling.qdialog.provider;
 
 import java.util.Collection;
 import java.util.List;
@@ -20,7 +20,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 /**
- * This is the item provider adapter for a {@link org.qadzifi.eclipse.dialog.modeling.model.TextInput} object.
+ * This is the item provider adapter for a {@link org.qadzifi.eclipse.dialog.modeling.qdialog.TextInput} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

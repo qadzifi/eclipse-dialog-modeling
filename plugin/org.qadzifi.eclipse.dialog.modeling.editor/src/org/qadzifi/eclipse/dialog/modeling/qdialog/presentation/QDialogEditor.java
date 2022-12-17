@@ -1,6 +1,6 @@
 /**
  */
-package org.qadzifi.eclipse.dialog.modeling.model.presentation;
+package org.qadzifi.eclipse.dialog.modeling.qdialog.presentation;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -153,17 +153,17 @@ import org.eclipse.emf.edit.ui.util.EditUIUtil;
 
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
-import org.qadzifi.eclipse.dialog.modeling.model.provider.ModelItemProviderAdapterFactory;
+import org.qadzifi.eclipse.dialog.modeling.qdialog.provider.QDialogItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 /**
- * This is an example of a Model model editor.
+ * This is an example of a QDialog model editor.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ModelEditor extends MultiPageEditorPart
+public class QDialogEditor extends MultiPageEditorPart
 		implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker {
 	/**
 	 * This keeps track of the editing domain that is used to track all changes to the model.
@@ -323,16 +323,16 @@ public class ModelEditor extends MultiPageEditorPart
 		public void partActivated(IWorkbenchPart p) {
 			if (p instanceof ContentOutline) {
 				if (((ContentOutline) p).getCurrentPage() == contentOutlinePage) {
-					getActionBarContributor().setActiveEditor(ModelEditor.this);
+					getActionBarContributor().setActiveEditor(QDialogEditor.this);
 
 					setCurrentViewer(contentOutlineViewer);
 				}
 			} else if (p instanceof PropertySheet) {
 				if (propertySheetPages.contains(((PropertySheet) p).getCurrentPage())) {
-					getActionBarContributor().setActiveEditor(ModelEditor.this);
+					getActionBarContributor().setActiveEditor(QDialogEditor.this);
 					handleActivate();
 				}
-			} else if (p == ModelEditor.this) {
+			} else if (p == QDialogEditor.this) {
 				handleActivate();
 			}
 		}
@@ -503,7 +503,7 @@ public class ModelEditor extends MultiPageEditorPart
 						public void run() {
 							removedResources.addAll(visitor.getRemovedResources());
 							if (!isDirty()) {
-								getSite().getPage().closeEditor(ModelEditor.this, false);
+								getSite().getPage().closeEditor(QDialogEditor.this, false);
 							}
 						}
 					});
@@ -513,7 +513,7 @@ public class ModelEditor extends MultiPageEditorPart
 					getSite().getShell().getDisplay().asyncExec(new Runnable() {
 						public void run() {
 							changedResources.addAll(visitor.getChangedResources());
-							if (getSite().getPage().getActiveEditor() == ModelEditor.this) {
+							if (getSite().getPage().getActiveEditor() == QDialogEditor.this) {
 								handleActivate();
 							}
 						}
@@ -544,7 +544,7 @@ public class ModelEditor extends MultiPageEditorPart
 
 		if (!removedResources.isEmpty()) {
 			if (handleDirtyConflict()) {
-				getSite().getPage().closeEditor(ModelEditor.this, false);
+				getSite().getPage().closeEditor(QDialogEditor.this, false);
 			} else {
 				removedResources.clear();
 				changedResources.clear();
@@ -659,7 +659,7 @@ public class ModelEditor extends MultiPageEditorPart
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelEditor() {
+	public QDialogEditor() {
 		super();
 		initializeEditingDomain();
 	}
@@ -676,7 +676,7 @@ public class ModelEditor extends MultiPageEditorPart
 		adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new ModelItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new QDialogItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.
@@ -981,7 +981,7 @@ public class ModelEditor extends MultiPageEditorPart
 			// Create a page for the selection tree view.
 			//
 			{
-				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), ModelEditor.this) {
+				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), QDialogEditor.this) {
 					@Override
 					public Viewer createViewer(Composite composite) {
 						Tree tree = new Tree(composite, SWT.MULTI);
@@ -1017,7 +1017,7 @@ public class ModelEditor extends MultiPageEditorPart
 			// Create a page for the parent tree view.
 			//
 			{
-				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), ModelEditor.this) {
+				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), QDialogEditor.this) {
 					@Override
 					public Viewer createViewer(Composite composite) {
 						Tree tree = new Tree(composite, SWT.MULTI);
@@ -1046,7 +1046,7 @@ public class ModelEditor extends MultiPageEditorPart
 			// This is the page for the list viewer
 			//
 			{
-				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), ModelEditor.this) {
+				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), QDialogEditor.this) {
 					@Override
 					public Viewer createViewer(Composite composite) {
 						return new ListViewer(composite);
@@ -1071,7 +1071,7 @@ public class ModelEditor extends MultiPageEditorPart
 			// This is the page for the tree viewer
 			//
 			{
-				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), ModelEditor.this) {
+				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), QDialogEditor.this) {
 					@Override
 					public Viewer createViewer(Composite composite) {
 						return new TreeViewer(composite);
@@ -1098,7 +1098,7 @@ public class ModelEditor extends MultiPageEditorPart
 			// This is the page for the table viewer.
 			//
 			{
-				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), ModelEditor.this) {
+				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), QDialogEditor.this) {
 					@Override
 					public Viewer createViewer(Composite composite) {
 						return new TableViewer(composite);
@@ -1141,7 +1141,7 @@ public class ModelEditor extends MultiPageEditorPart
 			// This is the page for the table tree viewer.
 			//
 			{
-				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), ModelEditor.this) {
+				ViewerPane viewerPane = new ViewerPane(getSite().getPage(), QDialogEditor.this) {
 					@Override
 					public Viewer createViewer(Composite composite) {
 						return new TreeViewer(composite);
@@ -1360,8 +1360,8 @@ public class ModelEditor extends MultiPageEditorPart
 				ExtendedPropertySheetPage.Decoration.NONE, null, 0, false) {
 			@Override
 			public void setSelectionToViewer(List<?> selection) {
-				ModelEditor.this.setSelectionToViewer(selection);
-				ModelEditor.this.setFocus();
+				QDialogEditor.this.setSelectionToViewer(selection);
+				QDialogEditor.this.setFocus();
 			}
 
 			@Override

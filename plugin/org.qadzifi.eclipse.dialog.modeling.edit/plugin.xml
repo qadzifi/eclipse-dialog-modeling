@@ -10,7 +10,7 @@
       <!-- @generated model -->
       <factory
             uri="http://qadzifi.github.io/modeling/eclipse/dialog"
-            class="org.qadzifi.eclipse.dialog.modeling.model.provider.ModelItemProviderAdapterFactory"
+            class="org.qadzifi.eclipse.dialog.modeling.qdialog.provider.QDialogItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

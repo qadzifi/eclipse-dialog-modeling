@@ -1,6 +1,6 @@
 /**
  */
-package org.qadzifi.eclipse.dialog.modeling.model.presentation;
+package org.qadzifi.eclipse.dialog.modeling.qdialog.presentation;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -68,9 +68,9 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ISetSelectionTarget;
 
-import org.qadzifi.eclipse.dialog.modeling.model.ModelFactory;
-import org.qadzifi.eclipse.dialog.modeling.model.ModelPackage;
-import org.qadzifi.eclipse.dialog.modeling.model.provider.ModelEditPlugin;
+import org.qadzifi.eclipse.dialog.modeling.qdialog.QDialogFactory;
+import org.qadzifi.eclipse.dialog.modeling.qdialog.QDialogPackage;
+import org.qadzifi.eclipse.dialog.modeling.qdialog.provider.ModelEditPlugin;
 
 import org.eclipse.core.runtime.Path;
 
@@ -88,7 +88,7 @@ import org.eclipse.ui.PartInitException;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ModelModelWizard extends Wizard implements INewWizard {
+public class QDialogModelWizard extends Wizard implements INewWizard {
 	/**
 	 * The supported extensions for created files.
 	 * <!-- begin-user-doc -->
@@ -96,7 +96,7 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public static final List<String> FILE_EXTENSIONS = Collections.unmodifiableList(Arrays
-			.asList(ModelEditorPlugin.INSTANCE.getString("_UI_ModelEditorFilenameExtensions").split("\\s*,\\s*")));
+			.asList(ModelEditorPlugin.INSTANCE.getString("_UI_QDialogEditorFilenameExtensions").split("\\s*,\\s*")));
 
 	/**
 	 * A formatted list of supported file extensions, suitable for display.
@@ -105,7 +105,7 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public static final String FORMATTED_FILE_EXTENSIONS = ModelEditorPlugin.INSTANCE
-			.getString("_UI_ModelEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
+			.getString("_UI_QDialogEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
 
 	/**
 	 * This caches an instance of the model package.
@@ -113,7 +113,7 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ModelPackage modelPackage = ModelPackage.eINSTANCE;
+	protected QDialogPackage qDialogPackage = QDialogPackage.eINSTANCE;
 
 	/**
 	 * This caches an instance of the model factory.
@@ -121,7 +121,7 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ModelFactory modelFactory = modelPackage.getModelFactory();
+	protected QDialogFactory qDialogFactory = qDialogPackage.getQDialogFactory();
 
 	/**
 	 * This is the file creation page.
@@ -129,7 +129,7 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ModelModelWizardNewFileCreationPage newFileCreationPage;
+	protected QDialogModelWizardNewFileCreationPage newFileCreationPage;
 
 	/**
 	 * This is the initial object creation page.
@@ -137,7 +137,7 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ModelModelWizardInitialObjectCreationPage initialObjectCreationPage;
+	protected QDialogModelWizardInitialObjectCreationPage initialObjectCreationPage;
 
 	/**
 	 * Remember the selection during initialization for populating the default container.
@@ -174,7 +174,7 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 		this.selection = selection;
 		setWindowTitle(ModelEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
 		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE
-				.getImageDescriptor(ModelEditorPlugin.INSTANCE.getImage("full/wizban/NewModel")));
+				.getImageDescriptor(ModelEditorPlugin.INSTANCE.getImage("full/wizban/NewQDialog")));
 	}
 
 	/**
@@ -186,7 +186,7 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 	protected Collection<String> getInitialObjectNames() {
 		if (initialObjectNames == null) {
 			initialObjectNames = new ArrayList<String>();
-			for (EClassifier eClassifier : modelPackage.getEClassifiers()) {
+			for (EClassifier eClassifier : qDialogPackage.getEClassifiers()) {
 				if (eClassifier instanceof EClass) {
 					EClass eClass = (EClass) eClassifier;
 					if (!eClass.isAbstract()) {
@@ -206,8 +206,8 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	protected EObject createInitialModel() {
-		EClass eClass = (EClass) modelPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
-		EObject rootObject = modelFactory.create(eClass);
+		EClass eClass = (EClass) qDialogPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
+		EObject rootObject = qDialogFactory.create(eClass);
 		return rootObject;
 	}
 
@@ -302,14 +302,14 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public class ModelModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
+	public class QDialogModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
 		/**
 		 * Pass in the selection.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public ModelModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
+		public QDialogModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
 			super(pageId, selection);
 		}
 
@@ -350,7 +350,7 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public class ModelModelWizardInitialObjectCreationPage extends WizardPage {
+	public class QDialogModelWizardInitialObjectCreationPage extends WizardPage {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -378,7 +378,7 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public ModelModelWizardInitialObjectCreationPage(String pageId) {
+		public QDialogModelWizardInitialObjectCreationPage(String pageId) {
 			super(pageId);
 		}
 
@@ -562,11 +562,11 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 	public void addPages() {
 		// Create a page, set the title, and the initial model file name.
 		//
-		newFileCreationPage = new ModelModelWizardNewFileCreationPage("Whatever", selection);
-		newFileCreationPage.setTitle(ModelEditorPlugin.INSTANCE.getString("_UI_ModelModelWizard_label"));
-		newFileCreationPage.setDescription(ModelEditorPlugin.INSTANCE.getString("_UI_ModelModelWizard_description"));
-		newFileCreationPage.setFileName(ModelEditorPlugin.INSTANCE.getString("_UI_ModelEditorFilenameDefaultBase") + "."
-				+ FILE_EXTENSIONS.get(0));
+		newFileCreationPage = new QDialogModelWizardNewFileCreationPage("Whatever", selection);
+		newFileCreationPage.setTitle(ModelEditorPlugin.INSTANCE.getString("_UI_QDialogModelWizard_label"));
+		newFileCreationPage.setDescription(ModelEditorPlugin.INSTANCE.getString("_UI_QDialogModelWizard_description"));
+		newFileCreationPage.setFileName(ModelEditorPlugin.INSTANCE.getString("_UI_QDialogEditorFilenameDefaultBase")
+				+ "." + FILE_EXTENSIONS.get(0));
 		addPage(newFileCreationPage);
 
 		// Try and get the resource selection to determine a current directory for the file dialog.
@@ -593,7 +593,7 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 					// Make up a unique new name here.
 					//
 					String defaultModelBaseFilename = ModelEditorPlugin.INSTANCE
-							.getString("_UI_ModelEditorFilenameDefaultBase");
+							.getString("_UI_QDialogEditorFilenameDefaultBase");
 					String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
 					String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
 					for (int i = 1; ((IContainer) selectedResource).findMember(modelFilename) != null; ++i) {
@@ -603,8 +603,8 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 				}
 			}
 		}
-		initialObjectCreationPage = new ModelModelWizardInitialObjectCreationPage("Whatever2");
-		initialObjectCreationPage.setTitle(ModelEditorPlugin.INSTANCE.getString("_UI_ModelModelWizard_label"));
+		initialObjectCreationPage = new QDialogModelWizardInitialObjectCreationPage("Whatever2");
+		initialObjectCreationPage.setTitle(ModelEditorPlugin.INSTANCE.getString("_UI_QDialogModelWizard_label"));
 		initialObjectCreationPage
 				.setDescription(ModelEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
 		addPage(initialObjectCreationPage);

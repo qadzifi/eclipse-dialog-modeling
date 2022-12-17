@@ -1,6 +1,6 @@
 /**
  */
-package org.qadzifi.eclipse.dialog.modeling.model.provider;
+package org.qadzifi.eclipse.dialog.modeling.qdialog.provider;
 
 import java.util.Collection;
 import java.util.List;
@@ -24,12 +24,12 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.qadzifi.eclipse.dialog.modeling.model.DialogContainer;
-import org.qadzifi.eclipse.dialog.modeling.model.ModelFactory;
-import org.qadzifi.eclipse.dialog.modeling.model.ModelPackage;
+import org.qadzifi.eclipse.dialog.modeling.qdialog.DialogContainer;
+import org.qadzifi.eclipse.dialog.modeling.qdialog.QDialogFactory;
+import org.qadzifi.eclipse.dialog.modeling.qdialog.QDialogPackage;
 
 /**
- * This is the item provider adapter for a {@link org.qadzifi.eclipse.dialog.modeling.model.DialogContainer} object.
+ * This is the item provider adapter for a {@link org.qadzifi.eclipse.dialog.modeling.qdialog.DialogContainer} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
@@ -74,7 +74,7 @@ public class DialogContainerItemProvider extends ItemProviderAdapter implements 
 						getResourceLocator(), getString("_UI_DialogContainer_Title_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_DialogContainer_Title_feature",
 								"_UI_DialogContainer_type"),
-						ModelPackage.Literals.DIALOG_CONTAINER__TITLE, true, false, false,
+						QDialogPackage.Literals.DIALOG_CONTAINER__TITLE, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -90,7 +90,7 @@ public class DialogContainerItemProvider extends ItemProviderAdapter implements 
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ModelPackage.Literals.DIALOG_CONTAINER__TEXTINPUT);
+			childrenFeatures.add(QDialogPackage.Literals.DIALOG_CONTAINER__TEXTINPUT);
 		}
 		return childrenFeatures;
 	}
@@ -154,10 +154,10 @@ public class DialogContainerItemProvider extends ItemProviderAdapter implements 
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DialogContainer.class)) {
-		case ModelPackage.DIALOG_CONTAINER__TITLE:
+		case QDialogPackage.DIALOG_CONTAINER__TITLE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case ModelPackage.DIALOG_CONTAINER__TEXTINPUT:
+		case QDialogPackage.DIALOG_CONTAINER__TEXTINPUT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -175,8 +175,8 @@ public class DialogContainerItemProvider extends ItemProviderAdapter implements 
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(ModelPackage.Literals.DIALOG_CONTAINER__TEXTINPUT,
-				ModelFactory.eINSTANCE.createTextInput()));
+		newChildDescriptors.add(createChildParameter(QDialogPackage.Literals.DIALOG_CONTAINER__TEXTINPUT,
+				QDialogFactory.eINSTANCE.createTextInput()));
 	}
 
 	/**

@@ -1,27 +1,25 @@
 /**
  */
-package org.qadzifi.eclipse.dialog.modeling.model.presentation;
+package org.qadzifi.eclipse.dialog.modeling.qdialog.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
-
-import org.eclipse.emf.common.ui.EclipseUIPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
 /**
- * This is the central singleton for the Model editor plugin.
+ * This is the central singleton for the Model edit plugin.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public final class ModelEditorPlugin extends EMFPlugin {
+public final class ModelEditPlugin extends EMFPlugin {
 	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final ModelEditorPlugin INSTANCE = new ModelEditorPlugin();
+	public static final ModelEditPlugin INSTANCE = new ModelEditPlugin();
 
 	/**
 	 * Keep track of the singleton.
@@ -37,7 +35,7 @@ public final class ModelEditorPlugin extends EMFPlugin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelEditorPlugin() {
+	public ModelEditPlugin() {
 		super(new ResourceLocator[] {});
 	}
 
@@ -70,7 +68,7 @@ public final class ModelEditorPlugin extends EMFPlugin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static class Implementation extends EclipseUIPlugin {
+	public static class Implementation extends EclipsePlugin {
 		/**
 		 * Creates an instance.
 		 * <!-- begin-user-doc -->

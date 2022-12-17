@@ -10,7 +10,7 @@
       <!-- @generated model -->
       <package
             uri="http://qadzifi.github.io/modeling/eclipse/dialog"
-            class="org.qadzifi.eclipse.dialog.modeling.model.ModelPackage"
+            class="org.qadzifi.eclipse.dialog.modeling.qdialog.QDialogPackage"
             genModel="model/model.genmodel"/>
    </extension>
 

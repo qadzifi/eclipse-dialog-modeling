@@ -1,6 +1,6 @@
 /**
  */
-package org.qadzifi.eclipse.dialog.modeling.model.presentation;
+package org.qadzifi.eclipse.dialog.modeling.qdialog.presentation;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -40,12 +40,13 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
 
 /**
- * This is the action bar contributor for the Model model editor.
+ * This is the action bar contributor for the QDialog model editor.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ModelActionBarContributor extends EditingDomainActionBarContributor implements ISelectionChangedListener {
+public class QDialogActionBarContributor extends EditingDomainActionBarContributor
+		implements ISelectionChangedListener {
 	/**
 	 * This keeps track of the active editor.
 	 * <!-- begin-user-doc -->
@@ -145,7 +146,7 @@ public class ModelActionBarContributor extends EditingDomainActionBarContributor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelActionBarContributor() {
+	public QDialogActionBarContributor() {
 		super(ADDITIONS_LAST_STYLE);
 		loadResourceAction = new LoadResourceAction();
 		validateAction = new ValidateAction();
@@ -161,8 +162,8 @@ public class ModelActionBarContributor extends EditingDomainActionBarContributor
 	@Override
 	public void contributeToToolBar(IToolBarManager toolBarManager) {
 		super.contributeToToolBar(toolBarManager);
-		toolBarManager.add(new Separator("model-settings"));
-		toolBarManager.add(new Separator("model-additions"));
+		toolBarManager.add(new Separator("qdialog-settings"));
+		toolBarManager.add(new Separator("qdialog-additions"));
 	}
 
 	/**
@@ -176,8 +177,8 @@ public class ModelActionBarContributor extends EditingDomainActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(ModelEditorPlugin.INSTANCE.getString("_UI_ModelEditor_menu"),
-				"org.qadzifi.eclipse.dialog.modeling.modelMenuID");
+		IMenuManager submenuManager = new MenuManager(ModelEditorPlugin.INSTANCE.getString("_UI_QDialogEditor_menu"),
+				"org.qadzifi.eclipse.dialog.modeling.qdialogMenuID");
 		menuManager.insertAfter("additions", submenuManager);
 		submenuManager.add(new Separator("settings"));
 		submenuManager.add(new Separator("actions"));

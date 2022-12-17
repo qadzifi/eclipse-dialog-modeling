@@ -1,6 +1,6 @@
 /**
  */
-package org.qadzifi.eclipse.dialog.modeling.model.provider;
+package org.qadzifi.eclipse.dialog.modeling.qdialog.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -28,9 +28,9 @@ import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
-import org.qadzifi.eclipse.dialog.modeling.model.ModelPackage;
+import org.qadzifi.eclipse.dialog.modeling.qdialog.QDialogPackage;
 
-import org.qadzifi.eclipse.dialog.modeling.model.util.ModelAdapterFactory;
+import org.qadzifi.eclipse.dialog.modeling.qdialog.util.QDialogAdapterFactory;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -41,7 +41,7 @@ import org.qadzifi.eclipse.dialog.modeling.model.util.ModelAdapterFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ModelItemProviderAdapterFactory extends ModelAdapterFactory
+public class QDialogItemProviderAdapterFactory extends QDialogAdapterFactory
 		implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
@@ -66,7 +66,7 @@ public class ModelItemProviderAdapterFactory extends ModelAdapterFactory
 	 * @generated
 	 */
 	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(
-			ModelEditPlugin.INSTANCE, ModelPackage.eNS_URI);
+			ModelEditPlugin.INSTANCE, QDialogPackage.eNS_URI);
 
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
@@ -82,7 +82,7 @@ public class ModelItemProviderAdapterFactory extends ModelAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModelItemProviderAdapterFactory() {
+	public QDialogItemProviderAdapterFactory() {
 		supportedTypes.add(IEditingDomainItemProvider.class);
 		supportedTypes.add(IStructuredItemContentProvider.class);
 		supportedTypes.add(ITreeItemContentProvider.class);
@@ -91,7 +91,7 @@ public class ModelItemProviderAdapterFactory extends ModelAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.qadzifi.eclipse.dialog.modeling.model.DialogContainer} instances.
+	 * This keeps track of the one adapter used for all {@link org.qadzifi.eclipse.dialog.modeling.qdialog.DialogContainer} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -99,7 +99,7 @@ public class ModelItemProviderAdapterFactory extends ModelAdapterFactory
 	protected DialogContainerItemProvider dialogContainerItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.qadzifi.eclipse.dialog.modeling.model.DialogContainer}.
+	 * This creates an adapter for a {@link org.qadzifi.eclipse.dialog.modeling.qdialog.DialogContainer}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -114,7 +114,7 @@ public class ModelItemProviderAdapterFactory extends ModelAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.qadzifi.eclipse.dialog.modeling.model.TextInput} instances.
+	 * This keeps track of the one adapter used for all {@link org.qadzifi.eclipse.dialog.modeling.qdialog.TextInput} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -122,7 +122,7 @@ public class ModelItemProviderAdapterFactory extends ModelAdapterFactory
 	protected TextInputItemProvider textInputItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.qadzifi.eclipse.dialog.modeling.model.TextInput}.
+	 * This creates an adapter for a {@link org.qadzifi.eclipse.dialog.modeling.qdialog.TextInput}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
