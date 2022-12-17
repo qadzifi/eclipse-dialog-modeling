@@ -9,7 +9,7 @@
    <extension point="org.eclipse.ui.newWizards">
       <!-- @generated model -->
       <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            id="org.qadzifi.edialog.modeling.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
             id="org.qadzifi.eclipse.dialog.modeling.qdialog.presentation.QDialogModelWizardID"
