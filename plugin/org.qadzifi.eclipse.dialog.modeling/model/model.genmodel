@@ -8,9 +8,9 @@
     copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>model.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
-  <genPackages prefix="Model" basePackage="org.qadzifi.eclipse.dialog.modeling" disposableProviderFactory="true"
-      extensibleProviderFactory="true" childCreationExtenders="true" fileExtensions="qzedm"
-      ecorePackage="model.ecore#/">
+  <genPackages prefix="QDialog" basePackage="org.qadzifi.eclipse.dialog.modeling"
+      disposableProviderFactory="true" extensibleProviderFactory="true" childCreationExtenders="true"
+      fileExtensions="qzedm" ecorePackage="model.ecore#/">
     <genClasses ecoreClass="model.ecore#//DialogContainer">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//DialogContainer/Title"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//DialogContainer/textinput"/>
