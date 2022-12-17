@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated mdedateyl -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.qadzifi.mdedateyl.model.mdedateyl.presentation.ELMDialogModelWizardID"
+            name="%_UI_ELMDialogModelWizard_label"
+            class="org.qadzifi.mdedateyl.model.mdedateyl.presentation.ELMDialogModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ELMDialogModelFile.gif">
+         <description>%_UI_ELMDialogModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated mdedateyl -->
+      <editor
+            id="org.qadzifi.mdedateyl.model.mdedateyl.presentation.ELMDialogEditorID"
+            name="%_UI_ELMDialogEditor_label"
+            icon="icons/full/obj16/ELMDialogModelFile.gif"
+            extensions="eedm"
+            class="org.qadzifi.mdedateyl.model.mdedateyl.presentation.ELMDialogEditor"
+            contributorClass="org.qadzifi.mdedateyl.model.mdedateyl.presentation.ELMDialogActionBarContributor">
+      </editor>
+   </extension>
+</plugin>

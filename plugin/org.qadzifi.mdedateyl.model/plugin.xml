@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated mdedateyl -->
+      <package
+            uri="http://qadzifi.github.io/modeling/eclipse/dialog"
+            class="org.qadzifi.mdedateyl.model.mdedateyl.ELMDialogPackage"
+            genModel="model/mdedateyl.genmodel"/>
+   </extension>
+
+</plugin>
