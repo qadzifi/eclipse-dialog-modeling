@@ -1,3 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
+   <feature url="features/org.qadzifi.mdedateyl.model.feature_0.0.1.202212180300.jar" id="org.qadzifi.mdedateyl.model.feature" version="0.0.1.202212180300">
+      <category name="Eclipse Dialog Modeling"/>
+   </feature>
+   <category-def name="Eclipse Dialog Modeling" label="Eclipse Dialog Modeling"/>
 </site>
