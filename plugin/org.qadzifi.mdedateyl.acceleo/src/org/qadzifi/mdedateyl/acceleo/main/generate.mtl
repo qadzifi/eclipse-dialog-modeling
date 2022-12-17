@@ -1,0 +1,17 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generate.
+ */]
+[module generate('http://qadzifi.github.io/modeling/eclipse/dialog')]
+
+
+[**
+ * The documentation of the template generateElement.
+ * @param aDialogContainer
+ */]
+[template public generateElement(aDialogContainer : DialogContainer)]
+[comment @main/]
+[file (aDialogContainer.name, false, 'UTF-8')]
+
+[/file]
+[/template]
